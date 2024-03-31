@@ -1,4 +1,0 @@
-C:/Programming Projects/smoltens/build/CMakeFiles/smoltens.dir
-C:/Programming Projects/smoltens/build/CMakeFiles/asm.dir
-C:/Programming Projects/smoltens/build/CMakeFiles/ALL_BUILD.dir
-C:/Programming Projects/smoltens/build/CMakeFiles/ZERO_CHECK.dir
