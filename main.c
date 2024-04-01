@@ -1,22 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "tensor.h"
 
 int main(int argc, char *argv[])
 {
-    Tensor *b = ones(3);
-    Tensor *a = ones(3);
-    b->show(b);
-    a->show(a);
 
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+
+    Tensor *b = ones(55000);
+    Tensor *a = ones(55000);
     Tensor *c = tensor_add(a, b);
-    c->show(c);
 
-    Tensor *d = tensor_add(c, c);
-    d->show(d);
+    float c_sum = tensor_sum(c);
+    float c_norm = tensor_frobenius_norm(c);
 
-    float prod = tensor_product(c, d);
-    float frob_norm = tensor_frobenius_norm(d);
-
-    printf("%f frob norm", frob_norm);
+    end = clock();
+    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("C Norm = %f\n", c_norm);
+    printf("C Sum = %f\n", c_sum);
+    printf("Time taken = %f seconds\n", cpu_time_used);
 }

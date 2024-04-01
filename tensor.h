@@ -33,3 +33,6 @@ DTYPE tensor_product(Tensor *a, Tensor *b);
 
 // Computes the frobenius norm of a tensor
 DTYPE tensor_frobenius_norm(Tensor *a);
+
+// Computes the sum of all elements of a tensor
+DTYPE tensor_sum(Tensor *a);
